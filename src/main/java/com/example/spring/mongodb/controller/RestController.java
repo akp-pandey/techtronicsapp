@@ -38,7 +38,7 @@ public class RestController {
 	}
 	
 	@PostMapping("/login")
-	public String loginStudent(@RequestBody Login login)
+	public ResponseEntity<Login> loginStudent(@RequestBody Login login)
 	{
 		String success="Register Yourself first";
 		ArrayList<Student> students=(ArrayList<Student>) repository.findAll();
@@ -46,10 +46,10 @@ public class RestController {
 		{
 			if(login.getEmail().equals(students.get(i).getEmail()) && login.getPassword().equals(students.get(i).getPassword()))
 			{
-				success="Successfully Login";
+				return new ResponseEntity<Login>(login,HttpStatus.OK);
 			}
 		}
-		return success;
+		return new ResponseEntity<Login>(HttpStatus.BAD_REQUEST);
 	}
 	
 	@PostMapping("/addCourse")
