@@ -11,6 +11,16 @@ public class Course {
 	private String price;
 	private String description;
 	private String book_name;
+	private String book_title;
+
+	public String getBook_title() {
+		return book_title;
+	}
+
+	public void setBook_title(String book_title) {
+		this.book_title = book_title;
+	}
+
 	public String getId() {
 		return id;
 	}
