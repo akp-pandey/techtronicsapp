@@ -12,6 +12,15 @@ public class Course {
 	private String description;
 	private String book_name;
 	private String book_title;
+	private String new_branch;
+
+	public String getNew_branch() {
+		return new_branch;
+	}
+
+	public void setNew_branch(String new_branch) {
+		this.new_branch = new_branch;
+	}
 
 	public String getBook_title() {
 		return book_title;
